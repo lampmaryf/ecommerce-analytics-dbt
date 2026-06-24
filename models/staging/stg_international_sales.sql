@@ -25,6 +25,12 @@ renamed as(
         cast(pcs as int) as quantity,
         
         from source
+            where sku is not null
+),
+
+final as (
+    select * from renamed
+    where sale_date is not null
 )
 
-select * from renamed
+select * from final
