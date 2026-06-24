@@ -1,0 +1,80 @@
+version: 2
+
+models:
+    - name: stg_orders
+      description: "Cleaned and renamed Amazon sale report data"
+      columns:
+        - name: order_id
+          description: "Unique order identifier"
+          tests:
+            - not_null
+        - name: order_date
+          description: "Date the order was placed"
+          tests:
+            - not_null
+        - name: product_sku
+          description: "Product SKU code"
+          tests:
+            - not_null
+        - name: order_amount
+          description: "Total order amount in INR"
+        - name: order_status
+          description: "Current status of the order"
+          tests:
+            - not_null  
+        
+    - name: stg_products
+      description: "Cleaned product catalog data"
+      columns:
+        - name: product_sku
+          description: "Unique product SKU code"
+          tests:
+            - not_null
+            - unique
+        - name: product_category
+          description: "Product category"
+          tests:
+            - not_null
+        - name: stock_quantity
+          description: "Current stock level"
+          tests:
+        
+    - name: stg_pricing
+      description: "Cleaned May 2022 pricing data across platforms"
+      columns:
+        - name: product_sku
+          description: "Product SKU code" 
+          tests:
+          - not_null
+        - name: cost_price
+          description: "Original cost price of product"
+        - name: old_retail_price
+          description: "Previous retail price before discount"
+        - name: discounted_price
+          description: "Final price after discount applied"
+
+    - name: stg_international_sales
+      description: "Cleaned international sales data"
+      columns:
+        - name: international_sales_index
+          description: "Unique identifier"
+          tests:
+          - not_null
+          - unique
+        - name: product_sku
+          description: "Product SKU code"
+          tests:
+          - not_null
+        - name: gross_amount
+          description: "Total gross sales amount"
+        - name: sale_date
+          description: "Date the sale was made"
+          tests:
+          - not_null
+                
+         
+            
+            
+
+                
+                

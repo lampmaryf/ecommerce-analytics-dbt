@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: ecommerce_raw
+    database: ECOMMERCE_RAW
+    schema: RAW
+    tables:
+      - name: AMAZON_SALE_REPORT 
+      - name: INTERNATIONAL_SALES
+      - name: PRODUCT_CATALOG
+      - name: MAY_2022_PRICING
